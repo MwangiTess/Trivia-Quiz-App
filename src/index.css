@@ -6,7 +6,7 @@
 }
 
 .app {
-  background-image: url(https://media.istockphoto.com/id/494094966/vector/question-mark-3d-seamless-wallpaper-pattern.jpg?s=612x612&w=0&k=20&c=u56aWdaxkF1T4k745zLP3egh7scxb4FjwaNpZpiLA44=);
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYSZPW5X8naV9yK9La43uCDkxFypKHQR9fVW6APN6c6S__MHYzVVMFEortj24VFESvlvY&usqp=CAU);
   min-height: 98.5vh;
   border: 8px solid #39445a93;
   margin: 5px;
@@ -28,5 +28,28 @@ hr {
   width: 100%;
 }
 .home {
-  
+  display: flex;
+  justify-content: space-around;
+}
+.banner {
+  width: 35vw;
+  align-self: center;
+  padding: 8px;
+}
+.settings {
+  width: 40vw;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
+.settingsSelect {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  flex: 0.8;
+  justify-content: space-evenly;
 }
