@@ -6,7 +6,13 @@ The Trivia Quiz App was created by Tess Mwangi.
 
 ## Description
 
-The Trivia Quiz App is a web application that allows users to test their knowledge on a variety of subjects. It has a user-friendly interface that allows users to select a category and difficulty level before starting the quiz. The quiz is timed and users are awarded points for every correct answer. At the end of the quiz, users can view their total score and the correct answers to the questions they answered incorrectly. 
+The Trivia Quiz App is a web application that  when the user first opens the app, they are taken to the home screen where they can enter their name, select a quiz category, and select a quiz difficulty level. Once they have entered this information, they can click on the "Start Quiz" button to begin the quiz.
+
+If the user has not filled out all required fields, an error message will be displayed prompting them to fill out all fields before starting the quiz.
+
+Once the user has started the quiz, they are presented with a series of multiple-choice questions. They can select their answer and then move on to the next question. Once they have completed all the questions, they are taken to a results screen where they can see their score and the correct answers to the questions.
+
+Overall, the user interface is simple and intuitive, making it easy for users to start and complete a quiz.
 
 ## Project Setup Instructions
 
