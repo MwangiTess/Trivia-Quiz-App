@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {  CircularProgress } from "@mui/material";
+import ShowQuestion from "/home/tess/Development/Code/Mod2/trivia-quiz-app/src/Components/ShowQuestion.jsx"
 
 
 const Questions = ({ name, question, setQuestion, score, setScore}) => {
@@ -17,9 +18,9 @@ const Questions = ({ name, question, setQuestion, score, setScore}) => {
                 ...question[currentQuestion]?.incorrect_answers,
             ]) // if there is a question shuffle the choices both correct and incorrect answers
         );
-    }, [question]);
+    }, [currentQuestion, question]);
 
-    console.log(options);// shows the list of choices in a question
+    console.log(options);// shows the list of choices in a question as an array
 
     function handleShuffle (option){
         return option.sort(() => Math.random() -0.5); // shuffle the multiple choices options and have them in a different order
@@ -34,6 +35,17 @@ const Questions = ({ name, question, setQuestion, score, setScore}) => {
                     <span>{question[currentQuestion].category}</span>
                     <span>SCore : {score}</span>
                 </div>
+
+                <ShowQuestion 
+                currentQuestion={currentQuestion}
+                setCurrentQuestion={setCurrentQuestion}
+                question={question}
+                setQuestion={setQuestion}
+                score={score}
+                setScore={setScore}
+                options={options}
+                correct={ question[currentQuestion]?.correct_answer}
+                />
                 </>
             ) : (
                 <CircularProgress />
