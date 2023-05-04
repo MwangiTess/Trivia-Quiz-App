@@ -41,10 +41,9 @@ const ShowQuestion = ({ currentQuestion, setCurrentQuestion, question, setQuesti
       } else setError("Please select an option first");
   }
 
-  function handleQuit (option) {
-    setSelected(option);
-    if (option === correct) setScore(score + 1);
-    setError(false);
+  function handleQuit () {
+    setCurrentQuestion(0);
+    setQuestion();
   }
 
  
@@ -77,7 +76,7 @@ const ShowQuestion = ({ currentQuestion, setCurrentQuestion, question, setQuesti
         style={{ width: 185}}
         component={Link}
         to="/"
-        onClick={handleQuit}
+        onClick={() => handleQuit()}
         >
         Quit</Button>
         <Button 
