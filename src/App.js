@@ -1,5 +1,5 @@
 import {React, useState, useEffect} from  'react'
-import { BrowserRouter, Link, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from "./Components/Header"
 import Home from "./Components/Home"
 import Questions from "./Components/Questions"
@@ -45,7 +45,10 @@ function App() {
           setScore={setScore}
           />}/>
 
-          <Route path='/results' element={<Results />}/>
+          <Route path='/results' element={<Results 
+          name={name}
+          score={score}
+          />}/>
          </Routes>
       </div>
     </BrowserRouter>
