@@ -1,11 +1,29 @@
 import { React, useState} from "react";
 import {  TextField, MenuItem, Button } from "@mui/material";
-import SelectCategory from "/home/tess/Development/Code/Mod2/trivia-quiz-app/src/Components/SelectCategory.js"
+import { useNavigate } from 'react-router-dom';
+import  ErrorMessage from "/home/tess/Development/Code/Mod2/trivia-quiz-app/src/Components/ErrorMessage.jsx";
+import  SelectCategory from "/home/tess/Development/Code/Mod2/trivia-quiz-app/src/Components/SelectCategory.js"
 
-const Home = ({ name, setName}) => {
+const Home = ({ name, setName, fetchQuestions}) => {
 
     const [category, setCategory] = useState("")
     const [difficulty, SetDifficulty] = useState("")
+    const [error, setError] = useState(false)
+
+    const navigate = useNavigate()
+
+    function handleSubmit () {
+        if(!category || !difficulty || !name) {
+            setError(true)
+            return
+        }
+        else {
+            setError(false)
+            fetchQuestions(category, difficulty)
+            navigate("/questions")
+        }
+    }
+
 
     return (
         <div className="home">
@@ -13,6 +31,8 @@ const Home = ({ name, setName}) => {
                 <span style={{ fontSize: 30 }}> Risky Quizness</span>
 
                 <div className="settingsSelect">
+                 {error && <ErrorMessage>Please Fill all the fields</ErrorMessage>}
+
 
                     <TextField 
                     style={{ marginBottom: 25}}
@@ -26,6 +46,8 @@ const Home = ({ name, setName}) => {
                         label="Select Category"
                         variant="outlined"
                         style={{ marginBottom: 30}}
+                        onChange={(e) => setCategory(e.target.value)}
+                        value={category}
                     >
                         {SelectCategory.map((categories) => (
                              <MenuItem key={categories.category} value={categories.value}>
@@ -38,17 +60,19 @@ const Home = ({ name, setName}) => {
                     <TextField 
                     select
                     label="Select Difficulty"
+                    variant="outlined"
                     value={difficulty}
                     onChange={(e) => SetDifficulty(e.target.value)}
-                    variant="outlined"
-                    style={{ marginBottom: 30 }}
+                     style={{ marginBottom: 30 }}
                     >
                         <MenuItem key="Easy" value="easy"> Easy </MenuItem>
                         <MenuItem key="Medium" value="medium"> Medium </MenuItem>
                         <MenuItem key="Hard" value="hard"> Hard </MenuItem>
                     </TextField>
 
-                    <Button variant="contained" size="large">
+                    <Button variant="contained" size="large"
+                    onClick={handleSubmit}
+                    >
                         Start Quiz
                     </Button>
                 </div>
