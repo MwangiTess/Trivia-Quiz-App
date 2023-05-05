@@ -58,4 +58,4 @@ npm start
 
 The Trivia Quiz App is licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-© Tess Amah 2023. All rights reserved.
+© Tess Mwangi 2023. All rights reserved.
