@@ -1,8 +1,17 @@
 # Project Name: Trivia Quiz App
 
+THe Trivia Quiz App was built using React, React Router, Material-UI, and Open Trivia API.
+
 ## Author: 
 
 The Trivia Quiz App was created by Tess Mwangi.
+
+## Project MVP
+
+- A home screen with a form to enter player name, category and difficulty level selection
+- A quiz screen to display questions and possible answers.
+- A results screen to display the final score and option to go to the home screen
+- Basic styling and design to improve the user interface and experience
 
 ## Description
 
