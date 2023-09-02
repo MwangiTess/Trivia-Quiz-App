@@ -19,7 +19,7 @@ function App() {
     .then((res) => res.json())
     .then((quiz) => {
       setQuestion(quiz.results);
-      console.log(quiz); 
+      // console.log(quiz); 
     })
   }
 
