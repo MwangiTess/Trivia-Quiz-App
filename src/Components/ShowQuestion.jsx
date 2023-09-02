@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@mui/material";
 import { useNavigate, Link } from 'react-router-dom';
-import ErrorMessage from "/home/tess/Development/Code/Mod2/trivia-quiz-app/src/Components/ErrorMessage.jsx";
+import ErrorMessage from "../Components/ErrorMessage";
 
 const QuizQuestion = ({ question }) => {
   const decodedQuestion = question.replace(/&quot;/g, '"');
@@ -55,7 +55,7 @@ const ShowQuestion = ({ currentQuestion, setCurrentQuestion, question, setQuesti
         <QuizQuestion question={question[currentQuestion].question} />
 
         <div className="optionss">
-          {error && <ErrorMessage>Please Fill all the fields</ErrorMessage>}
+          {error && <ErrorMessage>Please select one answer</ErrorMessage>}
           { options && options.map((option) => (
           <button 
           className={`singleOption ${selected && handleSelect(option)}`}

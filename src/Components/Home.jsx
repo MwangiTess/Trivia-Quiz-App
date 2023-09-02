@@ -1,8 +1,8 @@
 import { React, useState} from "react";
 import {  TextField, MenuItem, Button } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
-import  ErrorMessage from "/home/tess/Development/Code/Mod2/trivia-quiz-app/src/Components/ErrorMessage.jsx";
-import  SelectCategory from "/home/tess/Development/Code/Mod2/trivia-quiz-app/src/Components/SelectCategory.js"
+import  ErrorMessage from "../Components/ErrorMessage";
+import  SelectCategory from "../Components/SelectCategory"
 
 const Home = ({ name, setName, fetchQuestions}) => {
 
